@@ -1,0 +1,51 @@
+#numeracion {
+    /* Transparencia y posición de la numeración*/
+    background-color: transparent;
+    color: white;
+    position: relative;
+    left: 400px;
+    top: 40px;
+}
+
+.contenedor {
+    margin: auto;
+}
+
+/* .contenedor y body alinean la galería horizontalmente*/w
+
+body {
+    display: flex;
+    align-items: center;
+}
+
+img {
+    width: 400px;
+    height: 400px;
+}
+
+#izq {
+    opacity: 50%;
+    width: 50px;
+    height: 40px;
+    position: relative;
+    left: -525px;
+    top: -150px;
+}
+
+#izq:hover {
+   opacity: 100%;
+}
+
+#der {
+    opacity: 50%;
+    visibility: visible;
+    width: 50px;
+    height: 40px;
+    position: relative;
+    left: -135px;
+    top: -150px;
+}
+
+#der:hover {
+    opacity: 100%;
+}
