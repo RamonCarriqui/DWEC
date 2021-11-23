@@ -30,6 +30,7 @@ class Jugador {
 }
 
 class Juego {
+    
     constructor(jugador1, jugador2) {
         this.jugador1 = jugador1;
         this.jugador2 = jugador2;
@@ -110,3 +111,11 @@ juego1.partida();
 
 console.log(jugador1.resultados());
 console.log(jugador2.resultados());
+
+// Creo 2 jugadores, pasando sus datos a través de JSON
+// Cada jugador realiza una mano()
+
+// Creamos un juego llamando a partida()
+// Se muestra por consola jugador1.tirada y jugador.tirada
+
+export {Jugador, Juego};
