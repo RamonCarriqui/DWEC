@@ -68,54 +68,54 @@ class Juego {
 }
 
 
-// JUGADORES
-datos_jugador = {
-    nombre: "Ramón",
-    rondas_ganadas: 0,
-    rondas_perdidas: 0
+// // JUGADORES
+// datos_jugador = {
+//     nombre: "Ramón",
+//     rondas_ganadas: 0,
+//     rondas_perdidas: 0
 
-}
-var jugador1 = new Jugador(datos_jugador); // Creo jugador 1 y sus datos
+// }
+// var jugador1 = new Jugador(datos_jugador); // Creo jugador 1 y sus datos
 
-datos_jugador2 = {
-    nombre: "Pepe",
-    rondas_ganadas: 0,
-    rondas_perdidas: 0
-}
-var jugador2 = new Jugador(datos_jugador2); // Creo jugador 2 y sus datos
+// datos_jugador2 = {
+//     nombre: "Pepe",
+//     rondas_ganadas: 0,
+//     rondas_perdidas: 0
+// }
+// var jugador2 = new Jugador(datos_jugador2); // Creo jugador 2 y sus datos
 
-// JUGADORES
+// // JUGADORES
 
-//PARTIDA
+// //PARTIDA
 
-jugador1.mano();
-jugador2.mano();
-var juego1 = new Juego(jugador1, jugador2);
+// jugador1.mano();
+// jugador2.mano();
+// var juego1 = new Juego(jugador1, jugador2);
 
-console.log(jugador1.tirada);
-console.log(jugador2.tirada);
+// console.log(jugador1.tirada);
+// console.log(jugador2.tirada);
 
-juego1.partida();
+// juego1.partida();
 
-console.log(jugador1.resultados());
-console.log(jugador2.resultados());
+// console.log(jugador1.resultados());
+// console.log(jugador2.resultados());
 
-// Repito código para jugar a dos rondas
-jugador1.mano();
-jugador2.mano();
+// // Repito código para jugar a dos rondas
+// jugador1.mano();
+// jugador2.mano();
 
-console.log(jugador1.tirada);
-console.log(jugador2.tirada);
+// console.log(jugador1.tirada);
+// console.log(jugador2.tirada);
 
-juego1.partida();
+// juego1.partida();
 
-console.log(jugador1.resultados());
-console.log(jugador2.resultados());
+// console.log(jugador1.resultados());
+// console.log(jugador2.resultados());
 
-// Creo 2 jugadores, pasando sus datos a través de JSON
-// Cada jugador realiza una mano()
+// // Creo 2 jugadores, pasando sus datos a través de JSON
+// // Cada jugador realiza una mano()
 
-// Creamos un juego llamando a partida()
-// Se muestra por consola jugador1.tirada y jugador.tirada
+// // Creamos un juego llamando a partida()
+// // Se muestra por consola jugador1.tirada y jugador.tirada
 
 export {Jugador, Juego};
