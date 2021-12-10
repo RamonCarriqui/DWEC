@@ -42,7 +42,18 @@ class Book {
 }
 
 window.onload = () => {
+
+
     var milista = new BookList();
+    if (localStorage.milista) {
+        for (libro of JSON.parse(localStorage.milista).all) {
+            let linueva = document.createElement("li");
+            linueva.innerHTML = libro.title + ' ' + libro.author + ' ' + libro.genre + ' ' + libro.read + ' ' + libro.readDate;
+            document.getElementById("lista").appendChild(linueva);
+            milista.add(libro);
+        }
+
+    }
     document.getElementById("enviarymostrar").addEventListener("click", (e) => {
         e.preventDefault()
         let titulo = document.getElementById("titulo").value;
@@ -52,10 +63,18 @@ window.onload = () => {
         let fecha = document.getElementById("fecha").value;
         var libro = new Book(titulo, genero, autor, leido, fecha);
         milista.add(libro);
+
+        localStorage.setItem('milista', JSON.stringify(milista));
+
         let linueva = document.createElement("li");
-        linueva.innerHTML = libro.title + libro.author + libro.genre + libro.read + libro.readDate;
+        linueva.innerHTML = libro.title + ' ' + libro.author + ' ' + libro.genre + ' ' + libro.read + ' ' + libro.readDate;
+
         document.getElementById("lista").appendChild(linueva);
+
     });
+
+
+
 }
 
 
@@ -63,7 +82,7 @@ function interfaz() {
     document.body.style.backgroundColor = "#FF8065";
     document.getElementById("contenido").style.textAlign = "center";
     document.getElementById("imagen").style.width = "100px";
-    
+
     document.getElementById("formulario").style.backgroundColor = "#0CFFDA";
     document.getElementById("formulario").style.width = "500px";
     document.getElementById("formulario").style.margin = "auto";
