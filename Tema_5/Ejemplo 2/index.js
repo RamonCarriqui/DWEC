@@ -28,7 +28,7 @@ function borraIMG(evento) {
     console.log("borra img");
 }
 
-function crearLI() {
+function crearLI() { // Crear elementos y añadir nodos
     let nuevaEntrada = document.createElement("li");
     let texto = document.getElementById("textoLI").value;
     nuevaEntrada.addEventListener("click" , borraEntrada);

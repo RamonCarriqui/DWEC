@@ -45,7 +45,7 @@ window.onload = () => {
 
 
     var milista = new BookList();
-    if (localStorage.milista) {
+    if (localStorage.milista) { // Si existe un localStorage, muestro los datos
         for (libro of JSON.parse(localStorage.milista).all) {
             let linueva = document.createElement("li");
             linueva.innerHTML = libro.title + ' ' + libro.author + ' ' + libro.genre + ' ' + libro.read + ' ' + libro.readDate;
@@ -64,7 +64,8 @@ window.onload = () => {
         var libro = new Book(titulo, genero, autor, leido, fecha);
         milista.add(libro);
 
-        localStorage.setItem('milista', JSON.stringify(milista));
+        // Añado al localStorage
+        localStorage.setItem('milista', JSON.stringify(milibro));
 
         let linueva = document.createElement("li");
         linueva.innerHTML = libro.title + ' ' + libro.author + ' ' + libro.genre + ' ' + libro.read + ' ' + libro.readDate;
@@ -95,3 +96,25 @@ function interfaz() {
 }
 
 window.addEventListener("load", interfaz);
+
+// Creo un JSON de listalibros
+
+var libros = {
+    "libros": [
+        {
+            "titulo": "quijote",
+            "genero": "caballeresco",
+            "autor": "cervantes",
+            "leido": false,
+            "fecha": null
+        },
+        // se separan los valores como en un string con ","
+        {
+            "titulo": "quijote",
+            "genero": "caballeresco",
+            "autor": "cervantes",
+            "leido": false,
+            "fecha": null
+        }
+    ]
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Quality</title>
+    <script src="index.js"></script>
+</head>
+<body>
+    <!-- Pasamos los datos necesarios para realizar la búsqueda -->
+    
+    <label for="latitud">Introduce latitud </label><input type="float" name="latitud" id="latitud"><br>
+    <label for="longitud">Introduce longitud</label><input type="float" name="longitud" id="longitud">
+    <br>
+    <!-- Añadimos un evento al submit -->
+    <input type="submit" name="submit" id="submit" value="Buscar">
+</body>
+</html>
+
+<!-- Mapa que se genera con el JSON recibido -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>BreezoMeter Tiles</title>
+    <!-- Mapbox -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css" rel="stylesheet" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="map" style="width: 800px; height: 700px;"></div>
+    <script>
+      var apiKey = "904db20062d848dea54560ba135c410f"; // Your BreezoMeter API key
+      var mapBoxAccessToken = "pk.eyJ1IjoiY2FycmlrIiwiYSI6ImNreDdnNmt1dDBmOGgybm1ucW5jM3RveGUifQ.CxG2tWV_Tbg4-ROpk5t0NQ"; // your mapbox access token from: https://account.mapbox.com
+
+      var errorMessageBrz =
+        "Update the variable 'apiKey' with a BreezoMeter API key to see the tiles. Contact BreezoMeter if you need any help:    breezometer.com/contact-us";
+      var errorMessageMapbox =
+        "Update the variable 'mapBoxAccessToken' with a Mapbox Access Token to initialize the Mapbox SDK. You can get it from:                https://account.mapbox.com";
+
+      if (apiKey === "") alert(errorMessageBrz);
+      if (mapBoxAccessToken === "") alert(errorMessageMapbox);
+
+      var map = new mapboxgl.Map({
+        container: "map",
+        style: "mapbox://styles/mapbox/streets-v11", // your stylesheet location
+        center: [-3.6116505 , 37.1888368 ], // starting position [lng, lat]
+        zoom: 7, // starting zoom
+        accessToken: mapBoxAccessToken
+      });
+
+      map.on("load", function() {
+        addRasterSource();
+        addRasterLayer();
+      });
+
+      function addRasterSource() {
+        map.addSource("breezometer-tiles", {
+          type: "raster",
+          tiles: [
+            `https://tiles.breezometer.com/v1/air-quality/breezometer-aqi/current-conditions/{z}/{x}/{y}.png?key=${apiKey}&breezometer_aqi_color=indiper`
+          ],
+          tileSize: 256,
+          maxzoom: 8
+        });
+      }
+
+      function addRasterLayer() {
+        map.addLayer(
+          {
+            id: "breezometer-tiles",
+            type: "raster",
+            source: "breezometer-tiles",
+            minzoom: 0,
+            maxzoom: 22,
+            paint: {
+              "raster-opacity": 0.6
+            }
+          },
+          "admin-1-boundary-bg"
+        );
+      }
+    </script>
+  </body>
+</html>

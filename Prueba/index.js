@@ -54,5 +54,5 @@ git branch -M main
 git remote add origin https://github.com/RamonCarriqui/examenParcial.git
 git push -u origin main
 git add . 
-git commit -m "añado aexamen"
+git commit -m "añado examen"
 git push origin main */
