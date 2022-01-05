@@ -6,15 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Air Quality</title>
     <script src="index.js"></script>
+    <!-- <script src="https://api.breezometer.com/weather/v1/current-conditions?lat=437.1888368&lon=-3.6116505&key=904db20062d848dea54560ba135c410f"></script> -->
+    <script src="https://api.breezometer.com/air-quality/v2/current-conditions?lat=37.1888368&lon=-3.6116505&key=904db20062d848dea54560ba135c410f"></script>
 </head>
 <body>
-    <!-- Pasamos los datos necesarios para realizar la búsqueda -->
-    
-    <label for="latitud">Introduce latitud </label><input type="float" name="latitud" id="latitud"><br>
-    <label for="longitud">Introduce longitud</label><input type="float" name="longitud" id="longitud">
-    <br>
     <!-- Añadimos un evento al submit -->
-    <input type="submit" name="submit" id="submit" value="Buscar">
+    <input type="submit" name="submit" id="submit" value="Mapa del tiempo">
+    <br><br>
 </body>
 </html>
 
@@ -37,7 +35,7 @@
   </head>
 
   <body>
-    <div id="map" style="width: 800px; height: 700px;"></div>
+    <div id="map" style="width: 1400px; height: 700px;"></div>
     <script>
       var apiKey = "904db20062d848dea54560ba135c410f"; // Your BreezoMeter API key
       var mapBoxAccessToken = "pk.eyJ1IjoiY2FycmlrIiwiYSI6ImNreDdnNmt1dDBmOGgybm1ucW5jM3RveGUifQ.CxG2tWV_Tbg4-ROpk5t0NQ"; // your mapbox access token from: https://account.mapbox.com

@@ -122,7 +122,7 @@ function error(error) {
       break;
   }
 }
-// Ejercicio 1 Apartado 5 sin hacer
 
-navigator.geolocation.watchPosition(encuentrapos, error);
+
+
 

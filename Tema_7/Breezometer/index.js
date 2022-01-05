@@ -1,8 +1,17 @@
-// Al enviar el formulario se almacenan las variables latitud y longitud
+window.onload = () =>{
+    const boton = document.getElementById("submit");
+    boton.addEventListener("click", cambiarMapa);
 
+}
 
-// Dichas variables se actualizan con AJAX de nuevo en el HTML
+function cambiarMapa(){
+     // Cambia el value del boton a cambiar a Calidad del aire y además muestra el mapa del tiempo
+     if (this.value == "Mapa del tiempo"){
+        this.value = "Mapa de calidad del aire";
+        
 
-function obtenerDatos(){
-    https://api.breezometer.com/air-quality/v2/current-conditions?lat=48.857456&lon=2.354611&key=YOUR_API_KEY
+    }else{
+        this.value = "Mapa del tiempo";
+
+    }
 }
