@@ -1,16 +1,29 @@
-// e8b6c63ea00048a2a530f30d8e6a5f3d
+// API KEY
+// 4045049d
 
 
-window.onload = () =>{
-    const nombre = document.getElementById("nombre");
-    const boton = document.getElementById("submit");
+$(document).ready(function () {
+    $('input[type=submit]').on("click", buscar);
+});
 
-    boton.addEventListener("click", buscar(nombre));
-}
 
-function buscar(nombre){
-    var xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "https://www.fishwatch.gov/api/species", false);
-    xhttp.send();
-    document.getElementById("").innerHTML = xhttp.responseText;
-  }
+function buscar() {
+    // Creo un DIV
+    $('body').append('<div id="divBody"></div>'); // Creamos el div en el body con append
+    $('#divBody').css({ // Añadimos propiedades al DIV
+        'background-color': 'cyan',
+        'margin-top': '60px',
+        'width': '100%',
+        'height': '600px'
+    })
+
+    var mibusqueda = $('#nombre').val(); // Almaceno el valor del input y lo paso después en el link de la búsqueda
+    var numeroPagina = 1;
+
+    $( "#divBody" ).load( "https://www.omdbapi.com/?s="+mibusqueda+"&apikey=4045049d&page="+numeroPagina+"", function() {
+        // Falta maquetar lo que se devuelve
+      });
+    
+};
+
+
