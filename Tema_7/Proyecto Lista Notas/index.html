@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="misnotas">
+        <div id="fondo">
+            <h1>TODO WEB APP</h1>
+        </div>
+        <div id="texto">
+            <label for="tarea">Crea tu nueva tarea </label>
+            <input type="text" v-model="nombre" @keyup.enter="agregar" name="tarea">
+            <br>
+            <label for="descripcion"> Descripción </label>
+            <input type="text" v-model="descripcion" @keyup.enter="agregar" name="descripcion">
+            <br>
+            <button @click="agregar">Añadir tarea</button>
+            <br>
+        </div>
+
+        <!-- Div de notas -->
+        <div v-for="(tarea, index) in tareas">
+            <h1 v-bind:class="{normal:!tarea.estado, completada:tarea.estado}" @click="cambiarEstado(index)">
+                {{tarea.nombre}}</h1>
+            <h5>{{tarea.descripcion}}</h5>
+            <h6>{{tarea.fecha}}</h6>
+            <button @click="borrar(index)">Borrar</button>
+            <hr>
+
+        </div>
+
+        <br>
+        <div id="footer">
+            <p>Tienes {{tareas.length}} tareas y tienes {{finalizadas}} sin completar.</p>
+            <br>
+            <button @click="borrarCompletadas">Borrar tareas completadas</button> &nbsp; &nbsp; &nbsp;
+            <button>Mostrar completadas</button>
+            <button>Mostrar sin completar</button>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>

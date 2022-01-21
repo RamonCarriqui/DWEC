@@ -1,0 +1,19 @@
+#divBody {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+
+}
+
+#pelicula {
+    width: 100%;
+    height: 300px;
+    font-size: 10px;
+    margin-bottom: 10px;
+    background-color: aquamarine;
+}
+
+img{
+    width: 250px;
+    height: 200px;
+}
