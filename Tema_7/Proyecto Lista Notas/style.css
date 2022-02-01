@@ -1,20 +1,59 @@
+body {
+    background-color: #000000;
+}
+
 #misnotas {
     display: flex;
     flex-direction: column;
     align-content: center;
     height: 100vh;
-    margin-left: 35rem;
-    margin-right: 35rem;
+    margin-left: 20%;
+    margin-right: 20%;
     padding: 0.5rem;
+    background-color: #883333;
     border: 2px solid #ccc;
     text-align: center;
 }
 
-#fondo{
-    background-color: burlywood;
+#notas ul {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+    background-color: #ffe798;
+}
+
+#notas li {
+    list-style: none;
+    text-align: left;
+}
+
+#botonera {
+    display: flex;
+    align-content: center;
+}
+
+#cabecera {
+    display: flex;
+    flex-direction: column;
+
+    background: url("img/cabecera.png");
     margin-top: 0;
-    margin-bottom: 1rem;
-    height: 10rem;
+    height: 15rem;
+}
+
+#cabecera input {
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+#cabecera select {
+    margin-left: 47%;
+    margin-right: 47%;
+}
+
+#titulo {
+    font-weight: bold;
+    text-decoration: underline;
 }
 
 .completada {
@@ -26,18 +65,27 @@
     color: black;
 }
 
-button{
+button {
     margin: 1rem;
     width: 7rem;
     align-self: center;
 }
 
-#footer{
+#footer {
     background-color: black;
     display: flex;
     flex-direction: row;
     align-content: space-between;
-    
-}#footer>p{
+
+
+}
+
+#footer>p {
+    margin-left: 1rem;
     color: white;
+
+}
+
+#footer button {
+    margin-left: 10%;
 }
