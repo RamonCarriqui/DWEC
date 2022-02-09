@@ -2,4 +2,8 @@
 
 <!-- Utilizo las variables creadas en el componente -->
 <h3>{{titulo}} -- {{fecha}}</h3>
+<input type="text" name="" [(ngModel)]="nuevoUsuario" (keyup.enter)="alta()">
+<button (click)="alta()">Alta de usuarios</button>
 <div *ngFor="let nombre of nombres">{{nombre}}</div>
+<h2 *ngIf="!nombres.length">La lista de usuarios esta vacía</h2>
+
