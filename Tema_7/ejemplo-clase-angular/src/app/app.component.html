@@ -2,7 +2,7 @@
 
   Pruebas en clase:
   <!-- Llamo al componente creado -->
-  <app-nota></app-nota> 
+  <app-nota [datoapasar]="title" [pro]="title" (mievento)="capturaEvento($event)"></app-nota> 
 </div>
 
 <router-outlet></router-outlet>
